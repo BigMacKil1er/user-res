@@ -32,7 +32,7 @@ export default function SingInForm(){
                     </div>
                     <p className="description-input error">Введенные пароли не совпадают</p>
                 </div>
-                <label className="input-wrapper check-box-part">
+                <label className="checkbox-wrapper check-box-part">
                     <input type="checkbox" className="check-box" name="politic" id="politic" />
                     <p>Принимаю <a href="#">Условия использования</a> и <a href="#">Политику конфиденциальности</a></p>
                 </label>

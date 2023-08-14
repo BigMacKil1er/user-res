@@ -7,6 +7,7 @@
     background-color: $background-gray
     margin-top: 35px
     padding-top: 125px
+    padding-bottom: 60px
     
     form
         @include flex-content-direction(center, column)
@@ -41,7 +42,13 @@
         height: 56px
         margin: 10px
         @include flex-content-direction(center, column)
-        
+
+.checkbox-wrapper
+    @include flex-content-direction(center, row)
+    align-items: center
+    max-width: 434px
+    width: 90%
+    margin-bottom: 44px
 .input
     border: 1px solid
     border-color: $border-color
@@ -60,10 +67,10 @@
     left: 26px
 .check-box
     appearance: none
-    width: 24px
-    height: 24px
+    width: 30px
+    height: 20px
     background-color: $background-white
-    border: 2px solid $border-color
+    border: 1px solid $main-black
     border-radius: 5px
     position: relative
     cursor: pointer
@@ -81,9 +88,7 @@
             color: $main-black
         
     border-radius: 2px
-    background-color: #fff
-    width: 40px
-    height: 24px    
+    background-color: #fff  
     margin: 10px
 .error
     color: $error-color
