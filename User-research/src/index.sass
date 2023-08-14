@@ -1,0 +1,39 @@
+$main-black: #050505
+$button-color: #F0F0F0
+$background-white: #FDFDFD
+$background-gray: #FAFAFA
+$border-color: #ECECEC
+$required-color: #f00
+$error-color: #EA8164
+  
+@mixin flex-content-direction($content, $direction)
+  display: flex
+  justify-content: $content
+  flex-direction: $direction
+  
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap')
+:root 
+  font-family: Montserrat, Roboto, Avenir, Helvetica, Arial, sans-serif
+  color-scheme: light dark
+  color: $main-black
+  background-color: #fff
+
+  font-synthesis: none
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  -webkit-text-size-adjust: 100%
+
+*
+  padding: 0
+  margin: 0
+  font-size: 16px
+
+.button
+  cursor: pointer
+  border: none
+  color: $main-black
+  background-color: $button-color
+input
+  background-color: $background-white
+  border: none

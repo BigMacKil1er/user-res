@@ -1,0 +1,90 @@
+@import '../../index'
+.wrapper-form
+    @include flex-content-direction(center, column)
+    align-items: center
+    max-width: 553px
+    width: 90vw
+    background-color: $background-gray
+    margin-top: 35px
+    padding-top: 125px
+    
+    form
+        @include flex-content-direction(center, column)
+        align-items: center
+        width: 100%
+        margin-top: 55px
+        .check-box-part
+            gap: 12px
+    .input-wrapper
+        position: relative
+        @include flex-content-direction(center, row)
+        flex-direction: column
+        align-items: center
+        max-width: 434px
+        width: 90%
+        margin-bottom: 40px
+        
+        label
+            position: absolute
+            background-color: $background-white
+            z-index: 1
+            top: 0
+            left: 26px
+            font-size: 12px
+            font-family: Roboto
+            span
+                color: $required-color
+    .input-border
+        border-radius: 8px
+        max-width: 414px
+        width: 100%
+        height: 56px
+        margin: 10px
+        @include flex-content-direction(center, column)
+        
+.input
+    border: 1px solid
+    border-color: $border-color
+    height: 100%
+    border-radius: 8px
+    color: $main-black
+    padding: 0 16px
+    &::placeholder
+        color: #05050533
+
+.description-input
+    font-family: Roboto
+    font-size: 12px
+    position: absolute
+    top: 70px
+    left: 26px
+.check-box
+    appearance: none
+    width: 24px
+    height: 24px
+    background-color: $background-white
+    border: 2px solid $border-color
+    border-radius: 5px
+    position: relative
+    cursor: pointer
+    &::before
+        content: '\2713'
+        font-size: 18px
+        color: transparent
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        transition: color 0.3s ease
+    &:checked
+        &::before
+            color: $main-black
+        
+    border-radius: 2px
+    background-color: #fff
+    width: 40px
+    height: 24px    
+    margin: 10px
+.error
+    color: $error-color
+    border-color: $error-color
