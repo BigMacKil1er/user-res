@@ -3,7 +3,7 @@ export default function MiniCyrcle(){
     function getElements(){
         const cyrcleElements = []
         for (let index = 0; index < 9; index++) {
-            cyrcleElements.push(<div className={styles.mini_cyrcle}></div>)
+            cyrcleElements.push(<div className={styles.mini_cyrcle} key={index}></div>)
         }
         return cyrcleElements
     }

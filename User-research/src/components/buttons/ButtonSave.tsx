@@ -1,7 +1,10 @@
 import './ButtonSingInAndLogin.sass'
 export default function ButtonSave(props){
-    const {title} = props
+    const {title, callback} = props
+    function doSomething(){
+        callback()
+    }
     return (
-        <button className="button save">{title}</button>
+        <button className="button save" onClick={doSomething}>{title}</button>
     )
 }

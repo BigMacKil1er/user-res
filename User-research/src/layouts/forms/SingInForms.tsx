@@ -14,9 +14,15 @@ export default function SingInForm(){
                 <h3>Добро пожаловать!</h3>
                 <h3>Заполните форму, чтобы зарегистрироваться.</h3>
                 <form>
+                <div className="wrapper_input">
                     <InputItem title='Логин' required={true} description='Ваша электронная почта' />
+                </div>
+                <div className="wrapper_input">
                     <InputItem title='Пароль' required={true} description='Не менее 8 символов' />
+                </div>
+                <div className="wrapper_input">
                     <InputItem title='Подтвердите пароль' required={true} description='Введенные пароли не совпадают' />
+                </div>
                     <label className="checkbox-wrapper check-box-part">
                         <input type="checkbox" className="check-box" name="politic" id="politic" />
                         <p>Принимаю <a href="#">Условия использования</a> и <a href="#">Политику конфиденциальности</a></p>

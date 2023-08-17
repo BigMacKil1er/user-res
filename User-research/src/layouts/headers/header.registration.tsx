@@ -1,9 +1,9 @@
 import ButtonSingInAndLogIn from '../../components/buttons/ButtonSingInAndLogIn'
-import './headers.module.sass'
+import styles from './headers.module.sass'
 export default function HeaderRegistration(){
     return (
-        <header className="header-registration">
-            <div className="logo">
+        <header className={styles.header_registration}>
+            <div className={styles.logo}>
                 <h3>
                     Лого
                 </h3>

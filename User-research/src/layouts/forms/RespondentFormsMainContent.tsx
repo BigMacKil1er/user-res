@@ -1,21 +1,20 @@
+
+import { useState } from 'react'
 import ButtonSave from '../../components/buttons/ButtonSave'
 import ButtonSingInAndLogIn from '../../components/buttons/ButtonSingInAndLogIn'
 import styles from './RespondentFormsMainContent.module.sass'
-import InputItem from './components/InputItem'
 import MiniCyrcle from './components/MiniCyrcle'
-import SelectItem from './components/SelectItem'
+import MainInformation from './components/RespondentForm/MainInformation'
+import PaymentInformation from './components/RespondentForm/PaymentInformation'
 export default function RespondentForm(){
-    const sex = {
-        id: 1,
-        options: ['Муж.', 'Жен.']
+    const [count, setCount] = useState(1)
+    function nextStep(){
+        setCount(count + 1)
+        console.log(count);
+        
     }
-    const age = {
-        id: 2,
-        options: ['18-25','26-35','36-45', '46-55', '56-65', '66-75', '76-85']
-    }
-    const education = {
-        id: 3,
-        options: ['Неоконченное среднее','Среднее','Среднее специальное', 'Неоконченное высшее', 'Высшее', 'Аспирантура']
+    function prevStep(){
+        setCount(count - 1)
     }
     return (
         <div className={styles.wrapper_forms}>
@@ -49,56 +48,19 @@ export default function RespondentForm(){
                     </div>
                 </div>
                 <div className={styles.form}>
-                        <div>
-                            <h6>
-                            Имя и фамилия
-                            </h6>
-                            <div className={styles.wrapper_inputs}>
-                                <InputItem title='Имя' required={true} type='text' placeholder='Введите текст'/>
-                                <InputItem title='Фамилия' required={true} type='text' placeholder='Введите текст'/>
-                            </div>
-                            
-                        </div>
-                        <div>
-                            <h6>
-                            Контактные данные
-                            </h6>
-                            <div className={styles.wrapper_inputs}>
-                                <InputItem title='Телефон' required={false} type='tel' placeholder='+7'/>
-                                <InputItem title='Telegram' required={false} type='tel' placeholder='Введите текст'/>
-                                <InputItem title='WhatsApp' required={false} type='tel' placeholder='Введите текст'/>
-                                <InputItem title='VK' required={false} type='tel' placeholder='Введите текст'/> 
-                            </div>
-                            
-                        </div>
-                        <div>
-                            <h6>
-                            Место жительства
-                            </h6>
-                            <div className={styles.wrapper_inputs}>
-                                <InputItem title='Телефон' required={false} type='tel' placeholder='+7'/>
-                                <InputItem title='Telegram' required={false} type='tel' placeholder='Введите текст'/>
-                                <InputItem title='WhatsApp' required={false} type='tel' placeholder='Введите текст'/>
-                            </div>
-                            
-                        </div>
-                        <div>
-                            <div className={styles.base_information_selection}>
-                                <SelectItem title='Пол' required={true} id={sex.id} options={sex.options} />
-                                <SelectItem title='Возраст' required={true} id={age.id} options={age.options} />
-                                <SelectItem title='Образование' required={true} id={education.id} options={education.options} />
-                            </div>
-                            
-                        </div>
-                        <div>
-                            <h6>Есть опыт прохождения исследований?</h6>
-                            <input type="checkbox" name="" id="" />
-                        </div>
-                        <div>
-                            <ButtonSave title='Продолжить' />
-                            <ButtonSingInAndLogIn title='Сохранить' />
-                        </div>
+                    <div className={styles.back_link_wrapper}>
+                        <button className={styles.back_button}><img src="/back.png" alt="" onClick={prevStep}/></button>
+                    </div>
+                    {(count == 1) ? <MainInformation /> : <PaymentInformation />}
+                    {/* <PaymentInformation /> */}
+                    {/* <MainInformation />  */}
+                    <div className={styles.section_buttons}>
+                        <ButtonSingInAndLogIn title='Сохранить' />
+                        <ButtonSave title='Продолжить' callback={nextStep}/>
+                        
+                    </div>
                 </div>
+                
             </div>
         </div>
     )
