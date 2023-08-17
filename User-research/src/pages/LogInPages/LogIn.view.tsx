@@ -1,10 +1,12 @@
-import SingInForm from "../../layouts/forms/SingInForms";
+import LogInForms from "../../layouts/forms/LogInForms";
 import HeaderRegistration from "../../layouts/headers/header.registration";
-export default function SingInResearcher(){
+
+export default function LogIn(){
     return (
+
         <div className="wrapper">
             <HeaderRegistration />
-            <SingInForm />
+            <LogInForms />
         </div>
     )
 }

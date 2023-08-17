@@ -1,0 +1,24 @@
+@import '../../../index'
+
+.input-wrapper
+    position: relative
+    @include flex-content-direction(center, row)
+    flex-direction: column
+    align-items: center
+    width: 100%
+        
+    label
+        position: absolute
+        background-color: $background-white
+        z-index: 1
+        top: 0
+        left: 26px
+        font-size: 12px
+        span
+            color: $required-color
+    .input-border
+        border-radius: 8px
+        width: 100%
+        height: 56px
+        margin: 10px
+        @include flex-content-direction(center, column)
